@@ -52,7 +52,40 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.3\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.2.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.2.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.2.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.4.2.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="PersianDateTime, Version=1.1.5082.36395, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PersianDateTime.1.1.5082.36395\lib\net40\PersianDateTime.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -138,20 +171,101 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="BaseEntity.cs" />
+    <Compile Include="BaseRepository.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\Home_0_Controller.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProjectController.cs" />
+    <Compile Include="Filters\PaginationFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\AsyncHelper.cs" />
+    <Compile Include="Helpers\CheckImageClass.cs" />
+    <Compile Include="Helpers\CheckPermission.cs" />
+    <Compile Include="Helpers\Email.cs" />
+    <Compile Include="Helpers\ImageResizer.cs" />
+    <Compile Include="Helpers\PasswordHelper.cs" />
+    <Compile Include="Helpers\PersianCulture.cs" />
     <Compile Include="Migrations\202106251002248_init.cs" />
     <Compile Include="Migrations\202106251002248_init.designer.cs">
       <DependentUpon>202106251002248_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Appointment.cs" />
+    <Compile Include="Models\Article.cs" />
+    <Compile Include="Models\ArticleCategory.cs" />
+    <Compile Include="Models\ArticleComment.cs" />
+    <Compile Include="Models\ArticleHeadLine.cs" />
+    <Compile Include="Models\ArticleTag.cs" />
     <Compile Include="Models\BannerImage.cs" />
+    <Compile Include="Models\Certificate.cs" />
+    <Compile Include="Models\ContactForm.cs" />
+    <Compile Include="Models\Faq.cs" />
+    <Compile Include="Models\Gallery.cs" />
+    <Compile Include="Models\GalleryVideo.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Log.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\OurService.cs" />
+    <Compile Include="Models\OurTeam.cs" />
+    <Compile Include="Models\Partner.cs" />
+    <Compile Include="Models\Permission.cs" />
+    <Compile Include="Models\Project.cs" />
+    <Compile Include="Models\ProjectCategory.cs" />
+    <Compile Include="Models\ProjectGallery.cs" />
+    <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\RolePermission.cs" />
+    <Compile Include="Models\Service.cs" />
+    <Compile Include="Models\ServiceCategory.cs" />
+    <Compile Include="Models\StaticContentDetail.cs" />
+    <Compile Include="Models\StaticContentType.cs" />
+    <Compile Include="Models\Testimonial.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserRole.cs" />
     <Compile Include="MyDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\AppointmentRepository.cs" />
+    <Compile Include="Repositories\ArticleCategoriesRepository.cs" />
+    <Compile Include="Repositories\ArticleCommentsRepository.cs" />
+    <Compile Include="Repositories\ArticleHeadLinesRepository.cs" />
+    <Compile Include="Repositories\ArticlesRepositoriy.cs" />
+    <Compile Include="Repositories\AuthRepsitory.cs" />
     <Compile Include="Repositories\BannerImageRepository.cs" />
+    <Compile Include="Repositories\CertificatesRepository.cs" />
+    <Compile Include="Repositories\ContactFormsRepository.cs" />
+    <Compile Include="Repositories\FaqRepository.cs" />
+    <Compile Include="Repositories\GalleriesRepository.cs" />
+    <Compile Include="Repositories\GalleryVideosRepository.cs" />
+    <Compile Include="Repositories\LogsRepository.cs" />
+    <Compile Include="Repositories\OurServiceRepository.cs" />
+    <Compile Include="Repositories\OurTeamRepository.cs" />
+    <Compile Include="Repositories\PartnersRepository.cs" />
+    <Compile Include="Repositories\ProjectCategoriesRepository.cs" />
+    <Compile Include="Repositories\ProjectGalleriesRepository.cs" />
+    <Compile Include="Repositories\ProjectsRepository.cs" />
+    <Compile Include="Repositories\ServiceCategoriesRepository.cs" />
+    <Compile Include="Repositories\ServicesRepository.cs" />
+    <Compile Include="Repositories\StaticContentDetailsRepository.cs" />
+    <Compile Include="Repositories\StaticContentsRepository.cs" />
+    <Compile Include="Repositories\StaticContentTypes.cs" />
+    <Compile Include="Repositories\TestimonialsRepository.cs" />
+    <Compile Include="Repositories\UsersRepository.cs" />
+    <Compile Include="Utility\enums.cs" />
+    <Compile Include="ViewModels\AccountViewModels.cs" />
+    <Compile Include="ViewModels\ArticleViewModels.cs" />
+    <Compile Include="ViewModels\CommonViewModels.cs" />
+    <Compile Include="ViewModels\IdentityModels.cs" />
+    <Compile Include="ViewModels\ManageViewModels.cs" />
+    <Compile Include="ViewModels\ProjectViewModels.cs" />
+    <Compile Include="ViewModels\ServiceViewModels.cs" />
+    <Compile Include="ViewModels\UserViewModels.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin_Content\admin\core.datatable.js" />
@@ -1276,7 +1390,6 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Edit.cshtml" />
