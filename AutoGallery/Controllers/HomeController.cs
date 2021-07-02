@@ -10,6 +10,10 @@ using SazeNegar.Infrastructure.Repositories;
 using SazeNegar.Infratructure.Repositories;
 using SazeNegar.Web.ViewModels;
 
+using AutoGallery.Repositories;
+using AutoGallery;
+using AutoGallery.Models;
+
 namespace SazeNegar.Web.Controllers
 {
     public class HomeController : Controller
@@ -28,6 +32,8 @@ namespace SazeNegar.Web.Controllers
         private readonly ServicesRepository _servicesRepository;
         private readonly OurServiceRepository _ourServiceRepository;
 
+        private readonly BannerImageRepository _repo;
+
         public HomeController(StaticContentDetailsRepository contentRepo, GalleriesRepository galleryRepo, TestimonialsRepository testimonialRepo, ContactFormsRepository contactFormRepo, OurTeamRepository ourTeamRepo, CertificatesRepository certificatesRepo, GalleryVideosRepository galleryVideosRepo, ProjectsRepository projectsRepo,AppointmentRepository appointmentRepo,ArticlesRepository articlesRepo,PartnersRepository partnersRepo, ServicesRepository servicesRepo,OurServiceRepository ourServiceRepo)
         {
             _contentRepo = contentRepo;
@@ -44,7 +50,30 @@ namespace SazeNegar.Web.Controllers
             _servicesRepository = servicesRepo;
             _ourServiceRepository = ourServiceRepo;
         }
+        public HomeController()
+        {
+            _repo = new BannerImageRepository(new MyDbContext());
+        }
         public ActionResult Index()
+        {
+            BannerImage bannerImage;
+            var image = _repo.GetBannerImage();
+            bannerImage = image;
+            return View(bannerImage);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(BannerImage banImage, HttpPostedFileBase image)
+        {
+            var fileName = Path.GetFileName(image.FileName);
+            banImage.bannerImage = fileName;
+            _repo.AddBannerImage(banImage);
+            image.SaveAs(Server.MapPath("/Files/images/" + fileName));
+
+            return View();
+        }
+        // GET: Default/Edit/5
+        public ActionResult Edit()
         {
             return View();
         }
