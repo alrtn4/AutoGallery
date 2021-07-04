@@ -4093,8 +4093,8 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared0\Error.cshtml" />
+    <Content Include="Views\Shared0\_Layout.cshtml" />
     <Content Include="Views\Home0\About.cshtml" />
     <Content Include="Views\Home0\Contact.cshtml" />
     <Content Include="Views\Home0\Index.cshtml" />
@@ -4116,8 +4116,8 @@
     <Content Include="Views\Manage\ManageLogins.cshtml" />
     <Content Include="Views\Manage\SetPassword.cshtml" />
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
-    <Content Include="Views\Shared\Lockout.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared0\Lockout.cshtml" />
+    <Content Include="Views\Shared0\_LoginPartial.cshtml" />
     <Content Include="Scripts\kendo\2020.1.114\cultures\kendo.culture.aa-DJ.min.js.map" />
     <Content Include="Scripts\kendo\2020.1.114\cultures\kendo.culture.aa-ER.min.js.map" />
     <Content Include="Scripts\kendo\2020.1.114\cultures\kendo.culture.aa-ET.min.js.map" />
@@ -5179,8 +5179,8 @@
     <Content Include="Views\Home0\Navbar.cshtml" />
     <Content Include="Views\Home0\OurTeamPage.cshtml" />
     <Content Include="Views\Home0\Testimonials.cshtml" />
-    <Content Include="Views\Shared\_Layout3.cshtml" />
-    <Content Include="Views\Shared\_LoginLayout.cshtml" />
+    <Content Include="Views\Shared0\_Layout3.cshtml" />
+    <Content Include="Views\Shared0\_LoginLayout.cshtml" />
     <Content Include="Views\Project\Details.cshtml" />
     <Content Include="Views\Project\Index.cshtml" />
     <Content Include="Views\Home0\Service.cshtml" />
@@ -5196,6 +5196,9 @@
     <Content Include="Views\Home0\PartnersSection.cshtml" />
     <Content Include="Views\Home0\Portfolio.cshtml" />
     <Content Include="Views\Home\index.cshtml" />
+    <Content Include="Views\Home\Banner.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_LoginLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

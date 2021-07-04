@@ -1,5 +1,8 @@
 ﻿@model SazeNegar.Core.Models.StaticContentDetail
 
+@using SazeNegar.Core.Utility;
+@using System.Web.UI.WebControls;
+@using SazeNegar.Infrastructure;
 @{
     ViewBag.Title = "جزئیات محتوا";
 }
@@ -23,16 +26,36 @@
         @using (Html.BeginForm("Create", "StaticContentDetails", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
             @Html.AntiForgeryToken()
-            <input type="hidden" id="StaticContentTypeId" name="StaticContentTypeId" value="@ViewBag.StaticContentTypeId">
+            @*<input type="hidden" id="StaticContentTypeId" name="StaticContentTypeId" value="@ViewBag.StaticContentTypeId">*@
             <div class="card-body">
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                @*<div class="form-group">
+                <div class="form-group">
                     @Html.LabelFor(model => model.StaticContentTypeId, "نوع محتوا", new { })
                     <div class="col-md-5">
-                        @Html.DropDownList("StaticContentTypeId", null, htmlAttributes: new { @class = "form-control" })
+                        @{ 
+                            //Array values = Enum.GetValues(typeof(StaticContentTypes));
+                            //List<ListItem> items = new List<ListItem>(values.Length);
+
+                            //foreach (var i in values)
+                            //{
+                            //    items.Add(new ListItem
+                            //    {
+                            //        Text = Enum.GetName(typeof(StaticContentTypes), i),
+                            //        Value = ((int)i).ToString()
+                            //    });
+                            //}
+
+                            //var mySelectList = new SelectList(items);
+                            var db = new MyDbContext();
+                        }
+                        @Html.DropDownListFor(model => model.StaticContentTypeId ,
+                       //new SelectList(Enum.GetValues(typeof(StaticContentTypes)))
+                       new SelectList(db.StaticContentTypes, "id")
+                       //mySelectList
+                       , new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.StaticContentTypeId, "", new { @class = "form-text text-danger" })
                     </div>
-                </div>*@
+                </div>
                 <div class="form-group">
                     @Html.LabelFor(model => model.Title, new { })
                     <div class="col-md-5">

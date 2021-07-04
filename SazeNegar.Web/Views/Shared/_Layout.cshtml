@@ -3,210 +3,253 @@
 
 <head>
 
-    <!-- META ============================================= -->
+    <!-- Basic Page Needs
+    ================================================== -->
+    <title>صفحه اصلی</title>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="canonical" href=" " />
-    <!-- OG -->
-    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta name="keywords"
-          content="Web Design, Agency, Startup, Corporate, Creative, Studio, Marketing, Portfolio, Seo, Blogging, Development, Design" />
-    <meta name="author" content="ThemeTrades" />
-    <meta name="description"
-          content="Factro is a Fully Creative Mobile Responsive HTML Template. It is designed specifically for Agency, Startup, Corporate, Creative, Studio, Marketing, Portfolio, Seo, Blogging, Development, Design or other Agencys." />
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="~/Content/AutoGallery/css/font-awesome.css">
+    <link rel="stylesheet" href="~/Content/AutoGallery/css/style.css">
+    <link rel="stylesheet" href="~/Content/AutoGallery/css/color.css">
 
-    <meta property="og:url" content=" " />
-    <meta property="og:site_name" content="Factro : Construction Multipurpose HTML Template" />
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="en_us" />
-    <meta property="og:title" content="Factro : Construction Multipurpose HTML Template" />
-    <meta property="og:description"
-          content="Factro is a Fully Creative Mobile Responsive HTML Template. It is designed specifically for Agency, Startup, Corporate, Creative, Studio, Marketing, Portfolio, Seo, Blogging, Development, Design or other Agencys" />
-    <meta property="og:image" content="../../demo/preview.html" />
-
-
-
-    <!-- FAVICONS ICON ============================================= -->
-    <link rel="icon" href="~/Content/client/images/favicon.png" type="image/x-icon" />
-    <link rel="shortcut icon" type="image/x-icon" href="~/Content/client/images/favicon.png" />
-
-    <!-- PAGE TITLE HERE ============================================= -->
-    <title> سازه نگار </title>
-
-    <!-- MOBILE SPECIFIC ============================================= -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!--[if lt IE 9]>
-    <script src="~/Content/client/js/html5shiv.min.js"></script>
-    <script src="~/Content/client/js/respond.min.js"></script>
-    <![endif]-->
-    <!-- All PLUGINS CSS ============================================= -->
-    <link rel="stylesheet" type="text/css" href="~/Content/client/css/assets.css">
-    <link href="~/Content/client/css/assets.css" rel="stylesheet" />
-    <!-- TYPOGRAPHY ============================================= -->
-    <link rel="stylesheet" type="text/css" href="~/Content/client/css/typography.css">
-
-    <!-- SHORTCODES ============================================= -->
-    <link rel="stylesheet" type="text/css" href="~/Content/client/css/shortcodes/shortcodes.css">
-
-    <!-- STYLESHEETS ============================================= -->
-    <link rel="stylesheet" type="text/css" href="~/Content/client/css/style.css">
-    <link rel="stylesheet" type="text/css" href="~/Content/client/css/rtl.css">
-    <link class="skin" rel="stylesheet" type="text/css" href="~/Content/client/css/color/color-2.css">
-    <link class="skin" rel="stylesheet" type="text/css" href="~/Content/client/vendors/scroll/scrollbar.css">
-
-    <!-- REVOLUTION SLIDER CSS ============================================= -->
-    <link rel="stylesheet" type="text/css" href="~/Content/client/vendors/revolution/css/layers.css">
-    <link rel="stylesheet" type="text/css" href="~/Content/client/vendors/revolution/css/settings.css">
-    <link rel="stylesheet" type="text/css" href="~/Content/client/vendors/revolution/css/navigation.css">
-    <!-- REVOLUTION SLIDER END -->
+    <link rel="stylesheet" href="~/Content/AutoGallery/my-style.css">
 </head>
 
-<body id="bg">
-    <div class="page-wraper">
-        <div id="loading-icon-bx"></div>
-        <!-- Header Top ==== -->
-        @Html.Action("Navbar", "Home")
-        <!-- Header Top END ==== -->
-        @Html.Action("HeaderTop", "Home")
-        <!-- Content -->
+<body>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header Container
+        ================================================== -->
+        <header id="header-container">
+
+            <!-- Topbar -->
+            <div id="top-bar">
+                <div class="container">
+
+                    <!-- Left Side Content -->
+                    <div class="left-side">
+
+                        <!-- Top bar -->
+                        <ul class="top-bar-menu">
+                            <li><i class="fa fa-phone"></i> (123) 123-456</li>
+                            <li><i class="fa fa-envelope"></i> <a href="#">office@example.com</a></li>
+
+                        </ul>
+
+                    </div>
+                    <!-- Left Side Content / End -->
+                    <!-- Left Side Content -->
+                    <div class="right-side">
+
+                        <!-- Social Icons -->
+                        <ul class="social-icons">
+                            <li><a class="facebook" href="#"><i class="icon-facebook"></i></a></li>
+                            <li><a class="instagram" href="#"><i class="icon-instagram"></i></a></li>
+                            <li><a class="twitter" href="#"><i class="icon-twitter"></i></a></li>
+                        </ul>
+
+                    </div>
+                    <!-- Left Side Content / End -->
+
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <!-- Topbar / End -->
+            <!-- Header -->
+            <div id="header">
+                <div class="container">
+
+                    <!-- Left Side Content -->
+                    <div>
+
+                        <!-- Logo -->
+                        <div id="logo">
+                            <a href="index.html"><img src="~/Content/AutoGallery/images/logo.png" alt=""></a>
+                        </div>
+
+
+                        <!-- Mobile Navigation -->
+                        <div class="mmenu-trigger">
+                            <button class="hamburger hamburger--collapse" type="button">
+                                <span class="hamburger-box">
+                                    <span class="hamburger-inner"></span>
+                                </span>
+                            </button>
+                        </div>
+
+
+                        <!-- Main Navigation -->
+                        <nav id="navigation" class="style-1">
+                            <ul id="responsive">
+
+                                <li>
+                                    <a href="index.html">صفحه اصلی</a>
+
+                                </li>
+
+                                <li>
+                                    <a href="cars.html">خودرو ها</a>
+
+                                </li>
+
+                                <li>
+                                    <a href="blog.html">مقالات</a>
+
+                                </li>
+
+                                <li>
+                                    <a href="About-us.html">درباره ما</a>
+
+                                </li>
+
+                                <li>
+                                    <a href="contact.html">تماس با ما</a>
+
+                                </li>
+
+                            </ul>
+                        </nav>
+
+                        <!-- <ul>
+                            <li>tel: +123456789</li>
+                        </ul> -->
+                        <div class="clearfix"></div>
+                        <!-- Main Navigation / End -->
+
+                    </div>
+                    <!-- Left Side Content / End -->
+                    <!-- Right Side Content / End -->
+                    <!-- <div class="right-side"> -->
+                    <!-- Header Widget -->
+                    <!-- <div class="header-widget">
+                        <a href="login-register.html" class="sign-in"><i class="fa fa-user"></i> ورود / ثبت نام</a>
+                    </div> -->
+                    <!-- Header Widget / End -->
+                    <!-- </div> -->
+                    <!-- Right Side Content / End -->
+
+                </div>
+            </div>
+            <!-- Header / End -->
+
+        </header>
+        <div class="clearfix"></div>
+        <!-- Header Container / End -->
+
         @RenderBody()
-        <!-- Content END-->
-        <!-- Footer ==== -->
-        @Html.Action("Footer", "Home")
-        <!-- Footer END ==== -->
-        <button class="back-to-top fa fa-chevron-up"></button>
-    </div>
 
-    <!-- External JavaScripts -->
-    <script src="~/Content/client/js/jquery.min.js"></script>
-    <script src="~/Content/client/js/jquery-migrate.min.js"></script>
-    <script src="~/Content/client/vendors/wow/wow.js"></script>
-    <script src="~/Content/client/vendors/bootstrap/js/popper.min.js"></script>
-    <script src="~/Content/client/vendors/bootstrap/js/bootstrap.min.js"></script>
-    <script src="~/Content/client/vendors/bootstrap-select/bootstrap-select.min.js"></script>
-    <script src="~/Content/client/vendors/magnific-popup/magnific-popup.js"></script>
-    <script src="~/Content/client/vendors/counter/waypoints-min.js"></script>
-    <script src="~/Content/client/vendors/counter/counterup.min.js"></script>
-    <script src="~/Content/client/vendors/imagesloaded/imagesloaded.js"></script>
-    <script src="~/Content/client/vendors/masonry/masonry.js"></script>
-    <script src="~/Content/client/vendors/masonry/filter.js"></script>
-    <script src="~/Content/client/vendors/owl-carousel/owl.carousel.js"></script>
-    <script src="~/Content/client/js/jquery.scroller.js"></script>
-    <script src="~/Content/client/vendors/progress-bar/jquery.appear.js"></script>
-    <script src="~/Content/client/vendors/progress-bar/jquery.skillbar.js"></script>
-    <script src="~/Content/client/vendors/scroll/scrollbar.min.js"></script>
-    <script src="~/Content/client/js/functions.js"></script>
-    @*<script src="~/Content/client/js/contact.js"></script>*@
+        <!-- Footer
+        ================================================== -->
+        <div id="footer">
+            <!-- Main -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 col-sm-6">
+                        <img class="footer-logo" src="~/Content/AutoGallery/images/logo.png" alt="">
+                        <br><br>
+                        <p>
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                            چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
+                            تکنولوژی
+                            مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
+                        </p>
+                    </div>
 
-    <!-- Revolution JavaScripts Files -->
-    <script src="~/Content/client/vendors/revolution/js/jquery.themepunch.tools.min.js"></script>
-    <script src="~/Content/client/vendors/revolution/js/jquery.themepunch.revolution.min.js"></script>
-    <!-- Slider revolution 5.0 Extensions  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
-    <script src="~/Content/client/vendors/revolution/js/extensions/revolution.extension.actions.min.js"></script>
-    <script src="~/Content/client/vendors/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
-    <script src="~/Content/client/vendors/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
-    <script src="~/Content/client/vendors/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
-    <script src="~/Content/client/vendors/revolution/js/extensions/revolution.extension.migration.min.js"></script>
-    <script src="~/Content/client/vendors/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
-    <script src="~/Content/client/vendors/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
-    <script src="~/Content/client/vendors/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-    <script src="~/Content/client/vendors/revolution/js/extensions/revolution.extension.video.min.js"></script>
-    <script>
-        jQuery(document).ready(function () {
+                    <div class="col-md-4 col-sm-6 ">
+                        <h4>پیوندهای مفید</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html">صفحه اصلی</a></li>
+                            <li><a href="cars.html">خودرو ها</a></li>
+                            <li><a href="blog.html">مقالات</a></li>
+                            <li><a href="About-us.html">درباره ما</a></li>
+                            <li><a href="contact.html">تماس با ما</a></li>
+                        </ul>
 
-            jQuery('.get-member-info').on('click', function () {
-                jQuery('.team-members-section .team-section').removeClass('active');
-                jQuery('[data-info=' + $(this).attr('data-id') + ']').addClass('active');
+                        <ul class="footer-links">
+                            <li><a href="index.html">صفحه اصلی</a></li>
+                            <li><a href="cars.html">خودرو ها</a></li>
+                            <li><a href="blog.html">مقالات</a></li>
+                            <li><a href="About-us.html">درباره ما</a></li>
+                            <li><a href="contact.html">تماس با ما</a></li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
 
-            });
-            jQuery('.close-team').on('click', function () {
-                jQuery('.team-members-section .team-section').removeClass('active');
-            });
+                    <div class="col-md-3  col-sm-12">
+                        <h4>تماس با ما</h4>
+                        <div class="text-widget">
+                            <span>تهران، میدان آزادی</span> <br>
+                            تلفن: <span>0210000 </span><br>
+                            ایمیل:<span> <a href="#">office@example.com</a> </span><br>
+                        </div>
 
-            var ttrevapi;
-            var tpj = jQuery;
-            if (tpj("#rev_slider_1061_1").revolution == undefined) {
-                revslider_showDoubleJqueryError("#rev_slider_1061_1");
-            } else {
-                ttrevapi = tpj("#rev_slider_1061_1").show().revolution({
-                    sliderType: "standard",
-                    jsFileLocation: "revolution/js/",
-                    sliderLayout: "fullscreen",
-                    dottedOverlay: "none",
-                    delay: 9000,
-                    navigation: {
-                        keyboardNavigation: "off",
-                        keyboard_direction: "horizontal",
-                        mouseScrollNavigation: "off",
-                        mouseScrollReverse: "default",
-                        onHoverStop: "off",
-                        touch: {
-                            touchenabled: "on",
-                            swipe_threshold: 75,
-                            swipe_min_touches: 50,
-                            swipe_direction: "horizontal",
-                            drag_block_vertical: false
-                        }
-                        ,
-                        bullets: {
-                            enable: true,
-                            hide_onmobile: true,
-                            hide_under: 1024,
-                            style: "uranus",
-                            hide_onleave: false,
-                            direction: "vertical",
-                            h_align: "right",
-                            v_align: "center",
-                            h_offset: 30,
-                            v_offset: 0,
-                            space: 5,
-                            tmp: '<span class="tp-bullet-inner"></span>'
-                        }
-                    },
-                    responsiveLevels: [1240, 1024, 778, 480],
-                    visibilityLevels: [1240, 1024, 778, 480],
-                    gridwidth: [1240, 1024, 778, 480],
-                    gridheight: [868, 768, 960, 720],
-                    lazyType: "none",
-                    parallax: {
-                        type: "3D",
-                        origo: "slidercenter",
-                        speed: 1000,
-                        levels: [2, 4, 6, 8, 10, 12, 14, 16, 45, 50, 47, 48, 49, 50, 0, 50],
-                        type: "3D",
-                        ddd_shadow: "off",
-                        ddd_bgfreeze: "on",
-                        ddd_overflow: "hidden",
-                        ddd_layer_overflow: "visible",
-                        ddd_z_correction: 100,
-                    },
-                    spinner: "off",
-                    stopLoop: "on",
-                    stopAfterLoops: 0,
-                    stopAtSlide: 1,
-                    shuffle: "off",
-                    autoHeight: "off",
-                    fullScreenAutoWidth: "off",
-                    fullScreenAlignForce: "off",
-                    fullScreenOffsetContainer: "",
-                    fullScreenOffset: "0",
-                    disableProgressBar: "on",
-                    hideThumbsOnMobile: "off",
-                    hideSliderAtLimit: 0,
-                    hideCaptionAtLimit: 0,
-                    hideAllCaptionAtLilmit: 0,
-                    debugMode: false,
-                    fallbacks: {
-                        simplifyAll: "off",
-                        nextSlideOnWindowFocus: "off",
-                        disableFocusListener: false,
+                        <ul class="social-icons margin-top-20">
+                            <li><a class="facebook" href="#"><i class="icon-facebook"></i></a></li>
+                            <li><a class="instagram" href="#"><i class="icon-instagram"></i></a></li>
+                            <li><a class="twitter" href="#"><i class="icon-twitter"></i></a></li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <!-- Copyright -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="copyrights">کپی رایت 1399 © تمامی حقوق برای Spad محفوظ است.</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- Footer / End -->
+        <!-- Back To Top Button -->
+        <div id="backtotop"><a href="#"></a></div>
+
+
+        <!-- Scripts
+        ================================================== -->
+        <script type="text/javascript" src="~/Content/AutoGallery/scripts/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="~/Content/AutoGallery/scripts/jquery-migrate-3.1.0.min.js"></script>
+        <script type="text/javascript" src="~/Content/AutoGallery/scripts/chosen.min.js"></script>
+        <script type="text/javascript" src="~/Content/AutoGallery/scripts/magnific-popup.min.js"></script>
+        <script type="text/javascript" src="~/Content/AutoGallery/scripts/owl.carousel.min.js"></script>
+        <script type="text/javascript" src="~/Content/AutoGallery/scripts/rangeSlider.js"></script>
+        <script type="text/javascript" src="~/Content/AutoGallery/scripts/sticky-kit.min.js"></script>
+        <script type="text/javascript" src="~/Content/AutoGallery/scripts/slick.min.js"></script>
+        <script type="text/javascript" src="~/Content/AutoGallery/scripts/masonry.min.js"></script>
+        <script type="text/javascript" src="~/Content/AutoGallery/scripts/mmenu.min.js"></script>
+        <script type="text/javascript" src="~/Content/AutoGallery/scripts/tooltips.min.js"></script>
+        <script type="text/javascript" src="~/Content/AutoGallery/scripts/custom.js"></script>
+
+        <!-- Google Autocomplete -->
+        <script>
+            function initAutocomplete() {
+                var input = document.getElementById('autocomplete-input');
+                var autocomplete = new google.maps.places.Autocomplete(input);
+
+                autocomplete.addListener('place_changed', function () {
+                    var place = autocomplete.getPlace();
+                    if (!place.geometry) {
+                        window.alert("No details available for input: '" + place.name + "'");
+                        return;
                     }
                 });
-            }
-        });
-    </script>
+            }</script>
+        <script src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initAutocomplete"></script>
+
+
+    </div>
+    <!-- Wrapper / End -->
+
+
 </body>
 
 </html>
+

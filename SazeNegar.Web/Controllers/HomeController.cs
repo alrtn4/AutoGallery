@@ -63,10 +63,15 @@ namespace SazeNegar.Web.Controllers
             contactUsContent.Facebook = _contentRepo.Get((int)StaticContents.Facebook);
             return PartialView(contactUsContent);
         }
-        public ActionResult HomeSlider()
+        //public ActionResult HomeSlider()
+        //{
+        //    var sliderContent = _contentRepo.GetContentByTypeId((int)StaticContentTypes.Slider);
+        //    return PartialView(sliderContent);
+        //}
+        public ActionResult Banner()
         {
-            var sliderContent = _contentRepo.GetContentByTypeId((int)StaticContentTypes.Slider);
-            return PartialView(sliderContent);
+            var bannerContent = _contentRepo.GetContentByTypeId((int)StaticContentTypes.Banner);
+            return PartialView(bannerContent);
         }
         public ActionResult Gallery()
         {

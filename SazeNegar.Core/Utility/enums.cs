@@ -11,7 +11,8 @@ namespace SazeNegar.Core.Utility
         Slider = 1001,
         AboutUs = 1,
         CompanyHistory = 2,
-        BlogImage = 1004
+        BlogImage = 1004,
+        Banner = 1005
     }
     public enum StaticContents
     {

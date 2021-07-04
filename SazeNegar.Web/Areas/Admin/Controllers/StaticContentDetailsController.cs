@@ -28,13 +28,13 @@ namespace SazeNegar.Web.Areas.Admin.Controllers
         public ActionResult Index()
         {
             var content = _repo.GetStaticContentDetails();
-            content = content.OrderByDescending(c => c.StaticContentTypeId == (int) StaticContentTypes.Slider).ThenByDescending(c=>c.StaticContentTypeId).ToList();
+            content = content.OrderByDescending(c => c.StaticContentTypeId == (int) StaticContentTypes.Slider || c.StaticContentTypeId == (int)StaticContentTypes.Banner).ThenByDescending(c=>c.StaticContentTypeId).ToList();
             return View(content);
         }
         // GET: Admin/StaticContentDetails/Create
         public ActionResult Create()
         {
-            ViewBag.StaticContentTypeId = (int)StaticContentTypes.Slider;
+            //ViewBag.StaticContentTypeId = (int)StaticContentTypes.Slider;
             return View();
         }
 
