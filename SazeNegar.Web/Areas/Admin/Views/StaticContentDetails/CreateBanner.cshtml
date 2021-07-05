@@ -20,10 +20,10 @@
     <div class="card card-custom gutter-b">
         <div class="card-header">
             <h3 class="card-title">
-                افزودن اسلایدر
+                افزودن بنر
             </h3>
         </div>
-        @using (Html.BeginForm("Create", "StaticContentDetails", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        @using (Html.BeginForm("CreateBanner", "StaticContentDetails", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
             @Html.AntiForgeryToken()
             <input type="hidden" id="StaticContentTypeId" name="StaticContentTypeId" value="@ViewBag.StaticContentTypeId">

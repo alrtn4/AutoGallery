@@ -12,7 +12,7 @@ namespace SazeNegar.Core.Utility
         AboutUs = 1,
         CompanyHistory = 2,
         BlogImage = 1004,
-        Banner = 1005
+        Banner = 1009
     }
     public enum StaticContents
     {

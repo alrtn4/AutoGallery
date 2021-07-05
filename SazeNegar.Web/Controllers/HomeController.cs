@@ -70,7 +70,7 @@ namespace SazeNegar.Web.Controllers
         //}
         public ActionResult Banner()
         {
-            var bannerContent = _contentRepo.GetContentByTypeId((int)StaticContentTypes.Banner);
+            var bannerContent = _contentRepo.GetContentByTypeId((int)StaticContentTypes.Banner).OrderByDescending(s => s.Id).FirstOrDefault();
             return PartialView(bannerContent);
         }
         public ActionResult Gallery()
