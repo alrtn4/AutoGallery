@@ -190,6 +190,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\SliderCartController.cs" />
     <Compile Include="Areas\Admin\Controllers\ArticleCategoriesController.cs" />
     <Compile Include="Areas\Admin\Controllers\ArticleCommentsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ArticleHeadLinesController.cs" />
@@ -2998,6 +2999,10 @@
     <Content Include="Content\AutoGallery\images\23.webp" />
     <Content Include="Content\AutoGallery\images\24.webp" />
     <Content Include="Areas\Admin\Views\StaticContentDetails\CreateBanner.cshtml" />
+    <Content Include="Areas\Admin\Views\SliderCart\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\SliderCart\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\SliderCart\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\SliderCart\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -5200,6 +5205,7 @@
     <Content Include="Views\Home\Banner.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_LoginLayout.cshtml" />
+    <Content Include="Views\Home\Carousel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -5217,6 +5223,7 @@
     <Folder Include="Files\Services\Image\" />
     <Folder Include="Files\Services\Temp\" />
     <Folder Include="Files\Services\Thumb\" />
+    <Folder Include="Files\SliderCart\Images\" />
     <Folder Include="Files\StaticContentImages\Temp\" />
     <Folder Include="Files\TestimonialImages\Temp\" />
   </ItemGroup>

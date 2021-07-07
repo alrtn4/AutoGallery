@@ -28,7 +28,7 @@ namespace SazeNegar.Web.Areas.Admin.Controllers
         public ActionResult Index()
         {
             var content = _repo.GetStaticContentDetails();
-            content = content.OrderByDescending(c => c.StaticContentTypeId == (int) StaticContentTypes.Slider || c.StaticContentTypeId == (int)StaticContentTypes.Banner).ThenByDescending(c=>c.StaticContentTypeId).ToList();
+            content = content.OrderByDescending(c => c.StaticContentTypeId == (int)StaticContentTypes.Slider || c.StaticContentTypeId == (int)StaticContentTypes.Banner).ThenByDescending(c => c.StaticContentTypeId).ToList();
             return View(content);
         }
         // GET: Admin/StaticContentDetails/Create
@@ -77,7 +77,6 @@ namespace SazeNegar.Web.Areas.Admin.Controllers
 
         public ActionResult CreateBanner()
         {
-            //ViewBag.StaticContentTypeId = (int)StaticContentTypes.Slider;
             ViewBag.StaticContentTypeId = (int)StaticContentTypes.Banner;
             return View();
         }
@@ -116,7 +115,7 @@ namespace SazeNegar.Web.Areas.Admin.Controllers
 
                 return RedirectToAction("Index");
             }
-            
+
             return View(staticContentDetail);
         }
 

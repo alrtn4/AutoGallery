@@ -13,7 +13,7 @@ namespace SpadCompanyPanel.Infrastructure.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202107040559280_init"; }
+            get { return "202107070904401_init"; }
         }
         
         string IMigrationMetadata.Source
