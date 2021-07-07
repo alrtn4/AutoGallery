@@ -27,8 +27,9 @@ namespace SazeNegar.Web.Controllers
         private readonly PartnersRepository _partnersRepo;
         private readonly ServicesRepository _servicesRepository;
         private readonly OurServiceRepository _ourServiceRepository;
+        private readonly CartRepository _CartRepository;
 
-        public HomeController(StaticContentDetailsRepository contentRepo, GalleriesRepository galleryRepo, TestimonialsRepository testimonialRepo, ContactFormsRepository contactFormRepo, OurTeamRepository ourTeamRepo, CertificatesRepository certificatesRepo, GalleryVideosRepository galleryVideosRepo, ProjectsRepository projectsRepo,AppointmentRepository appointmentRepo,ArticlesRepository articlesRepo,PartnersRepository partnersRepo, ServicesRepository servicesRepo,OurServiceRepository ourServiceRepo)
+        public HomeController(StaticContentDetailsRepository contentRepo, GalleriesRepository galleryRepo, TestimonialsRepository testimonialRepo, ContactFormsRepository contactFormRepo, OurTeamRepository ourTeamRepo, CertificatesRepository certificatesRepo, GalleryVideosRepository galleryVideosRepo, ProjectsRepository projectsRepo,AppointmentRepository appointmentRepo,ArticlesRepository articlesRepo,PartnersRepository partnersRepo, ServicesRepository servicesRepo,OurServiceRepository ourServiceRepo, CartRepository CartRepo)
         {
             _contentRepo = contentRepo;
             _galleryRepo = galleryRepo;
@@ -43,6 +44,8 @@ namespace SazeNegar.Web.Controllers
             _partnersRepo = partnersRepo;
             _servicesRepository = servicesRepo;
             _ourServiceRepository = ourServiceRepo;
+            _CartRepository = CartRepo;
+
         }
         public ActionResult Index()
         {
@@ -63,15 +66,21 @@ namespace SazeNegar.Web.Controllers
             contactUsContent.Facebook = _contentRepo.Get((int)StaticContents.Facebook);
             return PartialView(contactUsContent);
         }
-        //public ActionResult HomeSlider()
-        //{
-        //    var sliderContent = _contentRepo.GetContentByTypeId((int)StaticContentTypes.Slider);
-        //    return PartialView(sliderContent);
-        //}
+        public ActionResult HomeSlider()
+        {
+            var sliderContent = _contentRepo.GetContentByTypeId((int)StaticContentTypes.Slider);
+            return PartialView(sliderContent);
+        }
         public ActionResult Banner()
         {
             var bannerContent = _contentRepo.GetContentByTypeId((int)StaticContentTypes.Banner).OrderByDescending(s => s.Id).FirstOrDefault();
             return PartialView(bannerContent);
+        }
+
+        public ActionResult Carousel()
+        {
+            var CardContent = _CardRepository.GetCards();
+            return PartialView(CardContent);
         }
         public ActionResult Gallery()
         {

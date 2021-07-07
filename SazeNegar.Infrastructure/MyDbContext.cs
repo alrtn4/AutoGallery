@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Text;
 using SazeNegar.Core.Models;
-using Microsoft.AspNet.Identity.EntityFramework;
+
 
 namespace SazeNegar.Infrastructure
 {
@@ -35,5 +35,7 @@ namespace SazeNegar.Infrastructure
         public DbSet<Partner> Partners { get; set; }
         public DbSet<ProjectGallery> ProjectGalleries { get; set; }
         public DbSet<OurService> OurServices { get; set; }
+
+        public DbSet<Cart> Cart { get; set; }
     }
 }

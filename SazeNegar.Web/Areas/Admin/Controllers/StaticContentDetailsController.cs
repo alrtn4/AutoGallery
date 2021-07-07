@@ -77,7 +77,6 @@ namespace SazeNegar.Web.Areas.Admin.Controllers
 
         public ActionResult CreateBanner()
         {
-            //ViewBag.StaticContentTypeId = (int)StaticContentTypes.Slider;
             ViewBag.StaticContentTypeId = (int)StaticContentTypes.Banner;
             return View();
         }
@@ -116,7 +115,7 @@ namespace SazeNegar.Web.Areas.Admin.Controllers
 
                 return RedirectToAction("Index");
             }
-            
+
             return View(staticContentDetail);
         }
 
