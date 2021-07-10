@@ -120,7 +120,10 @@ namespace SazeNegar.Web.Areas.Admin.Controllers
         //}
 
         //GET: Admin/StaticContentDetails/Edit/5
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1324acf (after merge and fixing conflicts)
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -139,14 +142,17 @@ namespace SazeNegar.Web.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+<<<<<<< HEAD
 
         public ActionResult Edit(Cart cart, HttpPostedFileBase sliderCartImage)
 
+=======
+        public ActionResult Edit(Cart cart, HttpPostedFileBase sliderCartImage)
+>>>>>>> 1324acf (after merge and fixing conflicts)
         {
             if (ModelState.IsValid)
             {
                 #region Upload Image
-<<<<<<< HEAD
                 if (sliderCartImage != null)
                 {
                     if (System.IO.File.Exists(Server.MapPath("/Files/SliderCartImage/Image/" + cart.Image)))
@@ -215,6 +221,9 @@ namespace SazeNegar.Web.Areas.Admin.Controllers
         //    _repo.Delete(id);
         //    return RedirectToAction("Index");
         //}
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1324acf (after merge and fixing conflicts)
     }
 }

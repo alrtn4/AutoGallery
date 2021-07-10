@@ -27,11 +27,17 @@ namespace SazeNegar.Web.Controllers
         private readonly PartnersRepository _partnersRepo;
         private readonly ServicesRepository _servicesRepository;
         private readonly OurServiceRepository _ourServiceRepository;
+<<<<<<< HEAD
 
         private readonly CartRepository _cartRepository;
 
         public HomeController(StaticContentDetailsRepository contentRepo, GalleriesRepository galleryRepo, TestimonialsRepository testimonialRepo, ContactFormsRepository contactFormRepo, OurTeamRepository ourTeamRepo, CertificatesRepository certificatesRepo, GalleryVideosRepository galleryVideosRepo, ProjectsRepository projectsRepo,AppointmentRepository appointmentRepo,ArticlesRepository articlesRepo,PartnersRepository partnersRepo, ServicesRepository servicesRepo,OurServiceRepository ourServiceRepo, CartRepository cartRepository)
 
+=======
+        private readonly CartRepository _cartRepository;
+
+        public HomeController(StaticContentDetailsRepository contentRepo, GalleriesRepository galleryRepo, TestimonialsRepository testimonialRepo, ContactFormsRepository contactFormRepo, OurTeamRepository ourTeamRepo, CertificatesRepository certificatesRepo, GalleryVideosRepository galleryVideosRepo, ProjectsRepository projectsRepo,AppointmentRepository appointmentRepo,ArticlesRepository articlesRepo,PartnersRepository partnersRepo, ServicesRepository servicesRepo,OurServiceRepository ourServiceRepo, CartRepository cartRepository)
+>>>>>>> 1324acf (after merge and fixing conflicts)
         {
             _contentRepo = contentRepo;
             _galleryRepo = galleryRepo;
@@ -46,9 +52,13 @@ namespace SazeNegar.Web.Controllers
             _partnersRepo = partnersRepo;
             _servicesRepository = servicesRepo;
             _ourServiceRepository = ourServiceRepo;
+<<<<<<< HEAD
 
             _cartRepository = cartRepository;
 
+=======
+            _cartRepository = cartRepository;
+>>>>>>> 1324acf (after merge and fixing conflicts)
         }
         public ActionResult Index()
         {
@@ -69,7 +79,10 @@ namespace SazeNegar.Web.Controllers
             contactUsContent.Facebook = _contentRepo.Get((int)StaticContents.Facebook);
             return PartialView(contactUsContent);
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1324acf (after merge and fixing conflicts)
         public ActionResult Banner()
         {
             var bannerContent = _contentRepo.GetContentByTypeId((int)StaticContentTypes.Banner).OrderByDescending(s => s.Id).FirstOrDefault();
@@ -79,7 +92,10 @@ namespace SazeNegar.Web.Controllers
         {
             var carouselContent = _cartRepository.GetCarts().OrderByDescending(e => e.Id).ToList();
             return PartialView(carouselContent);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1324acf (after merge and fixing conflicts)
         }
         public ActionResult Gallery()
         {
