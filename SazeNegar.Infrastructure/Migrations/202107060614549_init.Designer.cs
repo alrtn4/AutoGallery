@@ -13,11 +13,7 @@ namespace SpadCompanyPanel.Infrastructure.Migrations
         
         string IMigrationMetadata.Id
         {
-<<<<<<< HEAD:SazeNegar.Infrastructure/Migrations/202107070904401_init.Designer.cs
             get { return "202107070904401_init"; }
-=======
-            get { return "202107060614549_init"; }
->>>>>>> master:SazeNegar.Infrastructure/Migrations/202107060614549_init.Designer.cs
         }
         
         string IMigrationMetadata.Source
