@@ -49,21 +49,17 @@ namespace SazeNegar.Web.Areas.Admin.Controllers
                 {
                     // Saving Temp Image
                     var newFileName = Guid.NewGuid() + Path.GetExtension(sliderCartImage.FileName);
-                    sliderCartImage.SaveAs(Server.MapPath("~/Files/SliderCart/Images/" + newFileName));
+                    sliderCartImage.SaveAs(Server.MapPath("~/Files/SliderCart/Image/" + newFileName));
 
-                    // Resizing Image
+                    //// Resizing Image
                     //ImageResizer image = new ImageResizer();
-                    //if (staticContentDetail.StaticContentTypeId == (int)StaticContentTypes.Slider || staticContentDetail.StaticContentTypeId == (int)StaticContentTypes.BlogImage)
+                    //image = new ImageResizer(1000, 1000, true);
 
-                    //    image = new ImageResizer(1020, 700, true);
-                    //if (staticContentDetail.StaticContentTypeId == (int)StaticContentTypes.CompanyHistory)
-                    //    image = new ImageResizer(1000, 1000, true);
-
-                    //image.Resize(Server.MapPath("/Files/StaticContentImages/Temp/" + newFileName),
-                    //    Server.MapPath("/Files/StaticContentImages/Image/" + newFileName));
+                    //image.Resize(Server.MapPath("~/Files/SliderCart/Temp/" + newFileName),
+                    //    Server.MapPath("~/Files/SliderCart/Image/" + newFileName));
 
                     //// Deleting Temp Image
-                    //System.IO.File.Delete(Server.MapPath("/Files/StaticContentImages/Temp/" + newFileName));
+                    //System.IO.File.Delete(Server.MapPath("~/Files/SliderCart/Temp/" + newFileName));
 
                     cart.Image = newFileName;
                 }
@@ -120,10 +116,6 @@ namespace SazeNegar.Web.Areas.Admin.Controllers
         //}
 
         //GET: Admin/StaticContentDetails/Edit/5
-<<<<<<< HEAD
-
-=======
->>>>>>> 1324acf (after merge and fixing conflicts)
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -142,13 +134,7 @@ namespace SazeNegar.Web.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-<<<<<<< HEAD
-
         public ActionResult Edit(Cart cart, HttpPostedFileBase sliderCartImage)
-
-=======
-        public ActionResult Edit(Cart cart, HttpPostedFileBase sliderCartImage)
->>>>>>> 1324acf (after merge and fixing conflicts)
         {
             if (ModelState.IsValid)
             {
@@ -221,9 +207,5 @@ namespace SazeNegar.Web.Areas.Admin.Controllers
         //    _repo.Delete(id);
         //    return RedirectToAction("Index");
         //}
-<<<<<<< HEAD
-
-=======
->>>>>>> 1324acf (after merge and fixing conflicts)
     }
 }

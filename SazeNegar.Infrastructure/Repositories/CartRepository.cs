@@ -17,10 +17,6 @@ namespace SazeNegar.Infrastructure.Repositories
         private readonly MyDbContext _context;
         private readonly LogsRepository _logger;
         public CartRepository(MyDbContext context, LogsRepository logger) : base(context, logger)
-<<<<<<< HEAD
-
-=======
->>>>>>> 1324acf (after merge and fixing conflicts)
         {
             _context = context;
             _logger = logger;
@@ -35,7 +31,3 @@ namespace SazeNegar.Infrastructure.Repositories
         }
     }
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 1324acf (after merge and fixing conflicts)

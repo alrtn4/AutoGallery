@@ -5223,7 +5223,8 @@
     <Folder Include="Files\Services\Image\" />
     <Folder Include="Files\Services\Temp\" />
     <Folder Include="Files\Services\Thumb\" />
-    <Folder Include="Files\SliderCart\Images\" />
+    <Folder Include="Files\SliderCart\Image\" />
+    <Folder Include="Files\SliderCart\Temp\" />
     <Folder Include="Files\StaticContentImages\Temp\" />
     <Folder Include="Files\TestimonialImages\Temp\" />
   </ItemGroup>

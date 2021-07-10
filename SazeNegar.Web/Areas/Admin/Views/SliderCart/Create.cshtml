@@ -97,12 +97,12 @@
                 <div class="form-group">
                     <label class="col-label">تصویر</label>
                     <div class="col-lg-6 col-md-12 col-sm-12">
-                        <div class="image-input image-input-outline" id="static-content-image">
+                        <div class="image-input image-input-outline" id="slider-cart-image">
                             <div class="image-input-wrapper" style="background-image: url(assets/media/users/100_1.jpg)"></div>
 
                             <label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="آپلود تصویر">
                                 <i class="fa fa-pen icon-sm text-muted"></i>
-                                <input type="file" name="StaticContentDetailImage" accept=".png, .jpg, .jpeg" />
+                                <input type="file" name="sliderCartImage" accept=".png, .jpg, .jpeg" />
                                 <input type="hidden" name="static-content_image_remove" />
                             </label>
 
@@ -142,6 +142,6 @@
             $('#Description').ckeditor();
 
         });
-        new KTImageInput('static-content-image');
+        new KTImageInput('slider-cart-image');
     </script>
 }
