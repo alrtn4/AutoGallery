@@ -16,13 +16,18 @@ namespace SazeNegar.Infrastructure.Repositories
     {
         private readonly MyDbContext _context;
         private readonly LogsRepository _logger;
+<<<<<<< HEAD
         public CartRepository(MyDbContext context, LogsRepository logger) : base(context, logger)
+=======
+        public CartRepository(MyDbContext context, LogsRepository logger) : base(context , logger)
+>>>>>>> master
         {
             _context = context;
             _logger = logger;
         }
         public Cart GetCart(int id)
         {
+<<<<<<< HEAD
             return _context.Carts.FirstOrDefault(a => a.Id == id);
         }
         public List<Cart> GetCarts()
@@ -31,3 +36,13 @@ namespace SazeNegar.Infrastructure.Repositories
         }
     }
 }
+=======
+            return _context.Cart.FirstOrDefault(a => a.Id == id);
+        }
+        public List<Cart> GetCarts()
+        {
+            return _context.Cart.Where(e => e.IsDeleted == false).ToList();
+        }
+    }
+}
+>>>>>>> master
