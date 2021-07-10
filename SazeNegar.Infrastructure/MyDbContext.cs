@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Text;
-<<<<<<< HEAD
 using Microsoft.AspNet.Identity.EntityFramework;
-=======
->>>>>>> master
 using SazeNegar.Core.Models;
 
 
@@ -40,10 +37,6 @@ namespace SazeNegar.Infrastructure
         public DbSet<ProjectGallery> ProjectGalleries { get; set; }
         public DbSet<OurService> OurServices { get; set; }
 
-<<<<<<< HEAD
         public DbSet<Cart> Carts { get; set; }
-=======
-        public DbSet<Cart> Cart { get; set; }
->>>>>>> master
     }
 }
