@@ -1,4 +1,4 @@
-﻿@model SazeNegar.Core.Models.Service
+﻿@model SazeNegar.Core.Models.Cart
 
 
 @{
@@ -14,13 +14,13 @@
     <dd class="col-sm-8">
         @Html.DisplayFor(model => model.Title)
     </dd>
-    <dt class="col-sm-4">
+    @*<dt class="col-sm-4">
         @Html.DisplayNameFor(model => model.ServiceCategory.Title)
     </dt>
     <dd class="col-sm-8">
         @Html.DisplayFor(model => model.ServiceCategory.Title)
-    </dd>
-    <dt class="col-sm-4">
+    </dd>*@
+    @*<dt class="col-sm-4">
         نویسنده
     </dt>
     <dd class="col-sm-8">
@@ -33,7 +33,7 @@
             <span>-</span>
         }
 
-    </dd>
+    </dd>*@
 </dl>
 <div style="float:left">
     @using (Html.BeginForm())

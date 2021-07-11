@@ -49,17 +49,17 @@ namespace SazeNegar.Web.Areas.Admin.Controllers
                 {
                     // Saving Temp Image
                     var newFileName = Guid.NewGuid() + Path.GetExtension(sliderCartImage.FileName);
-                    sliderCartImage.SaveAs(Server.MapPath("~/Files/SliderCart/Image/" + newFileName));
+                    sliderCartImage.SaveAs(Server.MapPath("~/Files/SliderCart/Temp/" + newFileName));
 
-                    //// Resizing Image
-                    //ImageResizer image = new ImageResizer();
-                    //image = new ImageResizer(1000, 1000, true);
+                    // Resizing Image
+                    ImageResizer image = new ImageResizer();
+                    image = new ImageResizer(1000, 1000, true);
 
-                    //image.Resize(Server.MapPath("~/Files/SliderCart/Temp/" + newFileName),
-                    //    Server.MapPath("~/Files/SliderCart/Image/" + newFileName));
+                    image.Resize(Server.MapPath("~/Files/SliderCart/Temp/" + newFileName),
+                        Server.MapPath("~/Files/SliderCart/Image/" + newFileName));
 
-                    //// Deleting Temp Image
-                    //System.IO.File.Delete(Server.MapPath("~/Files/SliderCart/Temp/" + newFileName));
+                    // Deleting Temp Image
+                    System.IO.File.Delete(Server.MapPath("~/Files/SliderCart/Temp/" + newFileName));
 
                     cart.Image = newFileName;
                 }
@@ -129,7 +129,6 @@ namespace SazeNegar.Web.Areas.Admin.Controllers
             }
             //ViewBag.cart = new SelectList(_repo.GetStaticContentTypes(), "Id", "Name", staticContentDetail.StaticContentTypeId);
             return View(cart);
-
         }
 
         [HttpPost]
@@ -141,25 +140,22 @@ namespace SazeNegar.Web.Areas.Admin.Controllers
                 #region Upload Image
                 if (sliderCartImage != null)
                 {
-                    if (System.IO.File.Exists(Server.MapPath("/Files/SliderCartImage/Image/" + cart.Image)))
-                        System.IO.File.Delete(Server.MapPath("/Files/SliderCartImage/Image/" + cart.Image));
+                    if (System.IO.File.Exists(Server.MapPath("/Files/SliderCart/Image/" + cart.Image)))
+                        System.IO.File.Delete(Server.MapPath("/Files/SliderCart/Image/" + cart.Image));
 
                     // Saving Temp Image
                     var newFileName = Guid.NewGuid() + Path.GetExtension(sliderCartImage.FileName);
-                    sliderCartImage.SaveAs(Server.MapPath("/Files/SliderCartImage/Image/" + newFileName));
+                    sliderCartImage.SaveAs(Server.MapPath("/Files/SliderCart/Temp/" + newFileName));
 
-                    //// Resizing Image
-                    //ImageResizer image = new ImageResizer();
-                    //if (staticContentDetail.StaticContentTypeId == (int)StaticContentTypes.Slider || staticContentDetail.StaticContentTypeId == (int)StaticContentTypes.BlogImage)
-                    //    image = new ImageResizer(1020, 700, true);
-                    //if (staticContentDetail.StaticContentTypeId == (int)StaticContentTypes.CompanyHistory)
-                    //    image = new ImageResizer(1000, 1000, true);
+                    // Resizing Image
+                    ImageResizer image = new ImageResizer();
+                    image = new ImageResizer(1000, 1000, true);
 
-                    //image.Resize(Server.MapPath("/Files/StaticContentImages/Temp/" + newFileName),
-                    //    Server.MapPath("/Files/StaticContentImages/Image/" + newFileName));
+                    image.Resize(Server.MapPath("/Files/SliderCart/Temp/" + newFileName),
+                        Server.MapPath("/Files/SliderCart/Image/" + newFileName));
 
-                    //// Deleting Temp Image
-                    //System.IO.File.Delete(Server.MapPath("/Files/StaticContentImages/Temp/" + newFileName));
+                    // Deleting Temp Image
+                    System.IO.File.Delete(Server.MapPath("/Files/SliderCart/Temp/" + newFileName));
 
                     cart.Image = newFileName;
                 }
@@ -171,41 +167,38 @@ namespace SazeNegar.Web.Areas.Admin.Controllers
             //ViewBag.StaticContentTypeId = new SelectList(_repo.GetStaticContentTypes(), "Id", "Name", staticContentDetail.StaticContentTypeId);
             return View(cart);
         }
-        //// GET: Admin/StaticContentDetails/Delete/5
-        //public ActionResult Delete(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    StaticContentDetail staticContentDetail = _repo.GetStaticContentDetail(id.Value);
-        //    if (staticContentDetail == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return PartialView(staticContentDetail);
-        //}
+        // get: admin/SliderCart/delete/5
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Cart cart = _repo.GetCart(id.Value);
+            if (cart == null)
+            {
+                return HttpNotFound();
+            }
+            return PartialView(cart);
+        }
 
-        //// POST: Admin/StaticContentDetails/Delete/5
-        //[HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult DeleteConfirmed(int id)
-        //{
-        //    var staticContentDetail = _repo.Get(id);
+        // post: admin/SliderCart/delete/5
+        [HttpPost, ActionName("delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            var cart = _repo.GetCart(id);
 
-        //    //#region Delete StaticContentDetail Image
-        //    //if (staticContentDetail.Image != null)
-        //    //{
-        //    //    if (System.IO.File.Exists(Server.MapPath("/Files/StaticContentImages/Image/" + staticContentDetail.Image)))
-        //    //        System.IO.File.Delete(Server.MapPath("/Files/StaticContentImages/Image/" + staticContentDetail.Image));
+            #region delete cart image
+            if (cart.Image != null)
+            {
+                if (System.IO.File.Exists(Server.MapPath("/Files/SliderCart/Image/" + cart.Image)))
+                    System.IO.File.Delete(Server.MapPath("/Files/SliderCart/Image/" + cart.Image));
+            }
+            #endregion
 
-        //    //    if (System.IO.File.Exists(Server.MapPath("/Files/StaticContentImages/Thumb/" + staticContentDetail.Image)))
-        //    //        System.IO.File.Delete(Server.MapPath("/Files/StaticContentImages/Thumb/" + staticContentDetail.Image));
-        //    //}
-        //    //#endregion
-
-        //    _repo.Delete(id);
-        //    return RedirectToAction("Index");
-        //}
+            _repo.Delete(id);
+            return RedirectToAction("index");
+        }
     }
 }
