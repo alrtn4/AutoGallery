@@ -190,6 +190,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\BrandsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CarsController.cs" />
     <Compile Include="Areas\Admin\Controllers\SliderCartController.cs" />
     <Compile Include="Areas\Admin\Controllers\ArticleCategoriesController.cs" />
     <Compile Include="Areas\Admin\Controllers\ArticleCommentsController.cs" />
@@ -3013,6 +3015,14 @@
     <Content Include="Areas\Admin\Views\SliderCart\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\SliderCart\Index.cshtml" />
     <Content Include="Areas\Admin\Views\SliderCart\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Cars\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Cars\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Cars\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Cars\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Brands\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Brands\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Brands\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Brands\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -5221,6 +5231,8 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Files\ArticleImages\Temp\" />
+    <Folder Include="Files\CarsImages\Image\" />
+    <Folder Include="Files\CarsImages\Temp\" />
     <Folder Include="Files\CertificatesImages\Temp\" />
     <Folder Include="Files\GalleryImages\Temp\" />
     <Folder Include="Files\PartnersImages\Temp\" />

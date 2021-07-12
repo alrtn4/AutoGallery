@@ -84,6 +84,7 @@
     <Compile Include="Models\ArticleComment.cs" />
     <Compile Include="Models\ArticleHeadLine.cs" />
     <Compile Include="Models\ArticleTag.cs" />
+    <Compile Include="Models\CarClass.cs" />
     <Compile Include="Models\CarModel.cs" />
     <Compile Include="Models\Brands.cs" />
     <Compile Include="Models\Cars.cs" />

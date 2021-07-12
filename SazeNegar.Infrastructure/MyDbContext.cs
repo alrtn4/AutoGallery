@@ -38,5 +38,6 @@ namespace SazeNegar.Infrastructure
         public DbSet<OurService> OurServices { get; set; }
 
         public DbSet<Cart> Carts { get; set; }
+        public DbSet<Cars> Cars { get; set; }
     }
 }

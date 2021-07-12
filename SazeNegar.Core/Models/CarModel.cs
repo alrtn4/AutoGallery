@@ -10,12 +10,13 @@ namespace SazeNegar.Core.Models
     public class CarModel : IBaseEntity
     {
         public int Id { get; set; }
-        [Display(Name = "عنوان")]
+        [Display(Name = "مدل")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         [MaxLength(100, ErrorMessage = "{0} باید از 100 کارکتر کمتر باشد")]
-        public string BrandName { get; set; }
-        [Display(Name = "ویژه")]
         public string Model { get; set; }
+
+        public ICollection<Brands> Brands { get; set; }
+        public ICollection<CarModelCarClass> CarModelCarClasses { get; set; }
 
         public string InsertUser { get; set; }
         public DateTime? InsertDate { get; set; }
@@ -23,7 +24,6 @@ namespace SazeNegar.Core.Models
         public DateTime? UpdateDate { get; set; }
         public bool IsDeleted { get; set; }
 
-        public ICollection<CarModelCarClass> CarModelCarClasses { get; set; }
     }
 
 }
