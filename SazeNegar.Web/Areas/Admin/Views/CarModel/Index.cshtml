@@ -1,9 +1,9 @@
-﻿@model List<SazeNegar.Core.Models.Cars>
+﻿@model List<SazeNegar.Core.Models.CarModel>
 @using SazeNegar.Core.Utility
 @using Kendo.Mvc.UI
 @using SazeNegar.Infrastructure.Helpers;
 @{
-    ViewBag.Title = "ماشین";
+    ViewBag.Title = "مدل ها";
 }
 <input type="hidden" id="nav_active" value="static_content">
 <input type="hidden" id="nav_item_active" value="content">
@@ -12,13 +12,13 @@
         <div class="card-title">
             <h3 class="card-label">
                 @ViewBag.Title
-                <span class="d-block text-muted pt-2 font-size-sm">ویرایش محتوا </span>
+                <span class="d-block text-muted pt-2 font-size-sm">ویرایش مدل ها </span>
             </h3>
         </div>
         <div class="card-toolbar">
             <div class="card-toolbar">
                 <!--begin::Button-->
-                <a href="/Admin/Cars/Create" class="btn btn-primary font-weight-bolder">
+                <a href="/Admin/CarModel/Create" class="btn btn-primary font-weight-bolder">
                     <span class="svg-icon svg-icon-md">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -27,7 +27,7 @@
                                 <path d="M8.8012943,7.00241953 C9.83837775,5.20768121 11.7781543,4 14,4 C17.3137085,4 20,6.6862915 20,10 C20,12.2218457 18.7923188,14.1616223 16.9975805,15.1987057 C16.9991904,15.1326658 17,15.0664274 17,15 C17,10.581722 13.418278,7 9,7 C8.93357256,7 8.86733422,7.00080962 8.8012943,7.00241953 Z" fill="#000000" opacity="0.3" />
                             </g>
                         </svg>
-                    </span>	ماشین جدید
+                    </span>	مدل جدید
                 </a>
                 <!--end::Button-->
             </div>
@@ -41,13 +41,12 @@
         .HtmlAttributes(new { style = "height:450px" })
         .Columns(columns =>
         {
-        columns.Bound(model => model.Title);
+        columns.Bound(model => model.Model);
         columns.Bound(item => @item.Id).IncludeInMenu(false).Sortable(false).Title("دستورات").Filterable(false).Groupable(false).Template(
                                 @<text>
-                                    <a class='btn btn-sm btn-clean btn-icon mr-2' href="/Admin/Cars/Edit/@item.Id"><i class='far fa-edit text-primary'></i></a>
-                                    <a class='btn btn-sm btn-clean btn-icon' onclick="@(CheckPermission.Check("carsdelete") ? $"btnDelete({item.Id})" : "accessDenied()")"><i class='far fa-trash-alt text-danger'></i></a>
-                                    @Html.ActionLink("برند", "CarBrands", "Cars", new { carId = @item.Id }, new { @class = "btn btn-primary btn-sm ml-2" })
-
+                                    <a class='btn btn-sm btn-clean btn-icon mr-2' href="/Admin/CarModel/Edit/@item.Id"><i class='far fa-edit text-primary'></i></a>
+                                    <a class='btn btn-sm btn-clean btn-icon' onclick="@(CheckPermission.Check("carmodeldelete") ? $"btnDelete({item.Id})" : "accessDenied()")"><i class='far fa-trash-alt text-danger'></i></a>
+                                    @Html.ActionLink("کلاس", "Index", "CarClass", new { carId = @item.Id }, new { @class = "btn btn-primary btn-sm ml-2" })
                                 </text>
      ).Width(300);
  })
@@ -110,7 +109,7 @@
     </script>
     <script>
         function btnDelete(id) {
-            $.get("/Admin/Cars/Delete/" + id, function (result) {
+            $.get("/Admin/CarModel/Delete/" + id, function (result) {
                 $("#myModal").modal();
                 $("#myModalLabel").html("حذف محتوا");
                 $("#myModalHeader");

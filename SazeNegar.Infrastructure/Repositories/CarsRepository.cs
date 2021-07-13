@@ -17,6 +17,18 @@ namespace SazeNegar.Infrastructure.Repositories
             _context = context;
             _logger = logger;
         }
+        //public bool CarHasBrand(string carId, string brandId)
+        //{
+        //    return _context.Cars.Where(a => a.UserId == userId && a.RoleId == roleId).Any();
+        //}
+        public List<Brands> GetBrands()
+        {
+            return _context.Brands.ToList();
+        }
 
+        public Cars GetCar(int id)
+        {
+            return _context.Cars.FirstOrDefault(c => c.Id == id);
+        }
     }
 }

@@ -1,11 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Kendo.Mvc.UI;
 using SazeNegar.Core.Models;
 using SazeNegar.Infrastructure;
 using SazeNegar.Infrastructure.Repositories;
+using SazeNegar.Web.ViewModels;
 
 namespace SazeNegar.Web.Areas.Admin.Controllers
 {
@@ -111,5 +115,54 @@ namespace SazeNegar.Web.Areas.Admin.Controllers
             _repo.Delete(id);
             return RedirectToAction("Index");
         }
+
+        //GET
+        public ActionResult CarBrands(int carId)
+        {
+            var user = _repo.GetCar(carId);
+            ViewBag.CarID = carId;
+
+            var db = new MyDbContext();
+            var _logsRepository = new LogsRepository(db);
+            var _brandsRepo = new BrandsRepository(db, _logsRepository);
+            CarBrandsViewModel brandList = new CarBrandsViewModel();
+            brandList.CarBrandsList = _brandsRepo.GetAll();
+
+            return View(brandList);
+        }
+
+        ////POST
+        //[HttpPost]
+        //public ActionResult CarBrands(string userId, string[] selectedRoles)
+        //{
+
+        //    if (selectedRoles == null)
+        //    {
+        //        return RedirectToAction("UserRoles", new { userId });
+        //    }
+        //    List<string> seletRoleIds = new List<string>();
+        //    seletRoleIds.AddRange(selectedRoles);
+        //    foreach (var role in _repo.GetRoles())
+        //    {
+        //        #region Add Role if is in selectRoles and is not in UserRoles
+
+        //        if (seletRoleIds.Contains(role.Id) && !_repo.UserHasRole(userId, role.Id))
+        //        {
+        //            _repo.AddUserRole(userId, role.Id);
+        //        }
+        //        #endregion
+
+        //        #region Delete Role if is in UserRoles  and is not in selectRoles
+        //        if (!seletRoleIds.Contains(role.Id) && _repo.UserHasRole(userId, role.Id))
+        //        {
+        //            UserRole uRole = _repo.GetUserRole(userId, role.Id);
+        //            _repo.DeleteUserRole(uRole);
+        //        }
+        //        #endregion
+        //    }
+
+        //    return RedirectToAction("Index");
+        //}
+
     }
 }

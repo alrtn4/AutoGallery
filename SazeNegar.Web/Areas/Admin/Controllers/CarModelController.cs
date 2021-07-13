@@ -10,10 +10,10 @@ using SazeNegar.Infrastructure.Repositories;
 namespace SazeNegar.Web.Areas.Admin.Controllers
 {
     [Authorize]
-    public class BrandsController : Controller
+    public class CarModelController : Controller
     {
-        private readonly BrandsRepository _repo;
-        public BrandsController(BrandsRepository repo)
+        private readonly CarModelRepository _repo;
+        public CarModelController(CarModelRepository repo)
         {
             _repo = repo;
         }
@@ -30,15 +30,15 @@ namespace SazeNegar.Web.Areas.Admin.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Brands brands)
+        public ActionResult Create(CarModel carModel)
         {
             if (ModelState.IsValid)
             {
-                _repo.Add(brands);
+                _repo.Add(carModel);
                 return RedirectToAction("Index");
             }
 
-            return View(brands);
+            return View(carModel);
         }
 
         // GET: Admin/ArticleCategories/Edit/5
@@ -48,24 +48,24 @@ namespace SazeNegar.Web.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Brands brands = _repo.Get(id.Value);
-            if (brands == null)
+            CarModel carModel = _repo.Get(id.Value);
+            if (carModel == null)
             {
                 return HttpNotFound();
             }
-            return View(brands);
+            return View(carModel);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Brands brands)
+        public ActionResult Edit(CarModel carModel)
         {
             if (ModelState.IsValid)
             {
-                _repo.Update(brands);
+                _repo.Update(carModel);
                 return RedirectToAction("Index");
             }
-            return View(brands);
+            return View(carModel);
         }
 
         // GET: Admin/ArticleCategories/Delete/5
@@ -75,12 +75,12 @@ namespace SazeNegar.Web.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Brands brands = _repo.Get(id.Value);
-            if (brands == null)
+            CarModel carModel = _repo.Get(id.Value);
+            if (carModel == null)
             {
                 return HttpNotFound();
             }
-            return PartialView(brands);
+            return PartialView(carModel);
         }
 
         // POST: Admin/ArticleCategories/Delete/5
