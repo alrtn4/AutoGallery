@@ -8,15 +8,9 @@ namespace SazeNegar.Web.ViewModels
     public class CarBrandsViewModel 
     {
         public List<Brands> CarBrandsList { get; set; }
-        //public IEnumerator<Brands> GetEnumerator()
-        //{
-        //    IEnumerator<Brands> IE = (IEnumerator<Brands>)CarBrandsList;
-        //    return IE;
-        //}
+        public List<Cars> CarsList { get; set; }
+        public List<Brands> BrandsList { get; set; }
+        public Cars Cars { get; set; }
 
-        //IEnumerator IEnumerable.GetEnumerator()
-        //{
-        //    return GetEnumerator();
-        //}
     }
 }

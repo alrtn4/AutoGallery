@@ -30,7 +30,11 @@ namespace SazeNegar.Web.Areas.Admin.Controllers
         // GET: Admin/ArticleCategories/Create
         public ActionResult Create()
         {
-            return View();
+            CarBrandsViewModel carBrandsViewModel = new CarBrandsViewModel();
+            carBrandsViewModel.CarsList = _repo.GetAll();
+            carBrandsViewModel.CarBrandsList = _repo.GetBrandsList();
+
+            return View(carBrandsViewModel);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -131,38 +135,20 @@ namespace SazeNegar.Web.Areas.Admin.Controllers
             return View(brandList);
         }
 
-        ////POST
-        //[HttpPost]
-        //public ActionResult CarBrands(string userId, string[] selectedRoles)
-        //{
+        //POST
+        [HttpPost]
+        public ActionResult CarBrands(int carId, string selectedBrand)
+        {
 
-        //    if (selectedRoles == null)
-        //    {
-        //        return RedirectToAction("UserRoles", new { userId });
-        //    }
-        //    List<string> seletRoleIds = new List<string>();
-        //    seletRoleIds.AddRange(selectedRoles);
-        //    foreach (var role in _repo.GetRoles())
-        //    {
-        //        #region Add Role if is in selectRoles and is not in UserRoles
+            if (selectedBrand == null)
+            {
+                return RedirectToAction("CarBrands", new { carId });
+            }
 
-        //        if (seletRoleIds.Contains(role.Id) && !_repo.UserHasRole(userId, role.Id))
-        //        {
-        //            _repo.AddUserRole(userId, role.Id);
-        //        }
-        //        #endregion
+            _repo.EditCarBrand(carId, selectedBrand);
 
-        //        #region Delete Role if is in UserRoles  and is not in selectRoles
-        //        if (!seletRoleIds.Contains(role.Id) && _repo.UserHasRole(userId, role.Id))
-        //        {
-        //            UserRole uRole = _repo.GetUserRole(userId, role.Id);
-        //            _repo.DeleteUserRole(uRole);
-        //        }
-        //        #endregion
-        //    }
-
-        //    return RedirectToAction("Index");
-        //}
+            return RedirectToAction("Index");
+        }
 
     }
 }
