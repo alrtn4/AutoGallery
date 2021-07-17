@@ -1,4 +1,4 @@
-﻿@model SazeNegar.Core.Models.Cars
+﻿@model SazeNegar.Web.ViewModels.CarBrandsViewModel
 
 
 @using SazeNegar.Core.Utility;
@@ -30,34 +30,34 @@
 
             <div class="card-body">
                 <div class="form-group">
-                    @Html.LabelFor(model => model.Title, new { })
+                    @Html.LabelFor(model => model.Cars.Title, new { })
                     <div class="col-md-5">
-                        @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control " } })
-                        @Html.ValidationMessageFor(model => model.Title, "", new { @class = "form-text text-danger" })
+                        @Html.EditorFor(model => model.Cars.Title, new { htmlAttributes = new { @class = "form-control " } })
+                        @Html.ValidationMessageFor(model => model.Cars.Title, "", new { @class = "form-text text-danger" })
                     </div>
                 </div>
                 <div class="form-group">
-                    @Html.LabelFor(model => model.Price, new { })
+                    @Html.LabelFor(model => model.Cars.Price, new { })
                     <div class="col-md-5">
-                        @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control " } })
+                        @Html.EditorFor(model => model.Cars.Price, new { htmlAttributes = new { @class = "form-control " } })
                     </div>
                 </div>
                 <div class="form-group">
-                    @Html.LabelFor(model => model.Gear, new { })
+                    @Html.LabelFor(model => model.Cars.Gear, new { })
                     <div class="col-md-5">
-                        @Html.EditorFor(model => model.Gear, new { htmlAttributes = new { @class = "form-control " } })
+                        @Html.EditorFor(model => model.Cars.Gear, new { htmlAttributes = new { @class = "form-control " } })
                     </div>
                 </div>
                 <div class="form-group">
-                    @Html.LabelFor(model => model.Sunroof, new { })
+                    @Html.LabelFor(model => model.Cars.Sunroof, new { })
                     <div class="col-md-5">
-                        @Html.EditorFor(model => model.Sunroof, new { htmlAttributes = new { @class = "form-control " } })
+                        @Html.EditorFor(model => model.Cars.Sunroof, new { htmlAttributes = new { @class = "form-control " } })
                     </div>
                 </div>
                 <div class="form-group">
-                    @Html.LabelFor(model => model.Navigation, new { })
+                    @Html.LabelFor(model => model.Cars.Navigation, new { })
                     <div class="col-md-5">
-                        @Html.EditorFor(model => model.Navigation, new { htmlAttributes = new { @class = "form-control " } })
+                        @Html.EditorFor(model => model.Cars.Navigation, new { htmlAttributes = new { @class = "form-control " } })
 
                     </div>
                 </div>
@@ -65,7 +65,7 @@
                     <label class="col-label">تصویر</label>
                     <div class="col-lg-6 col-md-12 col-sm-12">
                         <div class="image-input image-input-outline" id="car-image">
-                            <div class="image-input-wrapper" style="background-image: url(/Files/CarsImages/Image/@Model.Image)"></div>
+                            <div class="image-input-wrapper" style="background-image: url(/Files/CarsImages/Image/@Model.Cars.Image)"></div>
 
                             <label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="آپلود تصویر">
                                 <i class="fa fa-pen icon-sm text-muted"></i>
@@ -78,6 +78,15 @@
                             </span>
                         </div>
                     </div>
+                </div>
+                <div class="form-group col-md-5">
+                    <label for="selectedBrand">لیست برندها</label>
+                    <select class="form-control" id="selectedBrand" name="selectedBrand">
+                        @foreach (var item in Model.CarBrandsList)
+                        {
+                            <option  @(ViewBag.carId == item.carId ? "selected" : "")  value="@item.Id">@item.Brand</option>
+                        }
+                    </select>
                 </div>
             </div>
             <div class="card-footer">

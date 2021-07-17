@@ -17,9 +17,11 @@ namespace SazeNegar.Web.Areas.Admin.Controllers
     public class CarsController : Controller
     {
         private readonly CarsRepository _repo;
-        public CarsController(CarsRepository repo)
+        private readonly BrandsRepository _repoBrands;
+        public CarsController(CarsRepository repo, BrandsRepository repoBrands)
         {
             _repo = repo;
+            _repoBrands = repoBrands;
         }
         // GET: Admin/ArticleCategories
         public ActionResult Index()
@@ -38,7 +40,7 @@ namespace SazeNegar.Web.Areas.Admin.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Cars cars, HttpPostedFileBase carImage)
+        public ActionResult Create(Cars cars, HttpPostedFileBase carImage, int selectedBrand)
         {
             if (ModelState.IsValid)
             {
@@ -52,6 +54,7 @@ namespace SazeNegar.Web.Areas.Admin.Controllers
                 }
                 #endregion
 
+                cars.Brand = _repoBrands.Get(selectedBrand);
                 _repo.Add(cars);
                 return RedirectToAction("Index");
             }
@@ -60,23 +63,26 @@ namespace SazeNegar.Web.Areas.Admin.Controllers
         }
 
         // GET: Admin/ArticleCategories/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Cars cars = _repo.Get(id.Value);
-            if (cars == null)
+            CarBrandsViewModel carBrandsViewModel = new CarBrandsViewModel();
+            carBrandsViewModel.Cars = _repo.Get(id);
+            carBrandsViewModel.CarBrandsList = _repo.GetBrandsList();
+            ViewBag.carId = id;
+            if (carBrandsViewModel == null)
             {
                 return HttpNotFound();
             }
-            return View(cars);
+            return View(carBrandsViewModel);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Cars cars, HttpPostedFileBase carImage)
+        public ActionResult Edit(CarBrandsViewModel carBrandsViewModel, HttpPostedFileBase carImage)
         {
             if (ModelState.IsValid)
             {
@@ -86,14 +92,15 @@ namespace SazeNegar.Web.Areas.Admin.Controllers
                     var newFileName = Guid.NewGuid() + Path.GetExtension(carImage.FileName);
                     carImage.SaveAs(Server.MapPath("~/Files/CarsImages/Image/" + newFileName));
 
-                    cars.Image = newFileName;
+                    carBrandsViewModel.Cars.Image = newFileName;
                 }
                 #endregion
 
-                _repo.Update(cars);
+                _repo.Update(carBrandsViewModel.Cars);
+                //_repoBrands.Update(carBrandsViewModel.CarBrandsList);
                 return RedirectToAction("Index");
             }
-            return View(cars);
+            return View(carBrandsViewModel);
         }
 
         // GET: Admin/ArticleCategories/Delete/5

@@ -11,6 +11,6 @@ namespace SazeNegar.Web.ViewModels
         public List<Cars> CarsList { get; set; }
         public List<Brands> BrandsList { get; set; }
         public Cars Cars { get; set; }
-
+        public Brands Brands { get; set; }
     }
 }
