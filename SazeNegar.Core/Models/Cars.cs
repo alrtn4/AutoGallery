@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 using System.Web.Mvc;
 
@@ -25,7 +26,10 @@ namespace SazeNegar.Core.Models
         [Display(Name = "تصویر")]
         public string Image { get; set; }
 
-        public Brands Brand { get; set; }
+        public int CarId { get; set; }
+        public int BrandId { get; set; }
+        [ForeignKey("BrandId")]
+        public virtual Brands Brand { get; set; }
 
         public string InsertUser { get; set; }
         public DateTime? InsertDate { get; set; }

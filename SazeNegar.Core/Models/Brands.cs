@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 using System.Web.Mvc;
 
@@ -15,9 +16,12 @@ namespace SazeNegar.Core.Models
         [MaxLength(100, ErrorMessage = "{0} باید از 100 کارکتر کمتر باشد")]
         public string Brand { get; set; }
 
-        public int carId { get; set; }
-        public ICollection<Cars> Cars { get; set; }
-        public CarModel CarModel { get; set; }
+        public int CarId { get; set; }
+        [ForeignKey("CarId")]
+        public virtual ICollection<Cars> Cars { get; set; }
+        public int CarModelId { get; set; }
+        [ForeignKey("CarModelId")]
+        public virtual CarModel CarModel { get; set; }
 
         public string InsertUser { get; set; }
         public DateTime? InsertDate { get; set; }

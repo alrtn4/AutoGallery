@@ -37,12 +37,12 @@ namespace SazeNegar.Infrastructure.Repositories
             return _context.Brands.Where(i => i.IsDeleted == false).ToList();
         }
 
-        public void EditCarBrand(int carId, string brand)
+        public void EditCarBrand(int CarId, string brand)
         {
-            var cars = GetCar(carId);
+            var cars = GetCar(CarId);
             var brands = cars.Brand;
             brands.Brand = brand;
-            brands.carId = carId;
+            brands.CarId = CarId;
             cars.Brand = brands;
             Update(cars);
         }

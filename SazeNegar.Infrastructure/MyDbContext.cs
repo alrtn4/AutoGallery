@@ -42,6 +42,7 @@ namespace SazeNegar.Infrastructure
         public DbSet<Brands> Brands { get; set; }
         public DbSet<CarModel> CarModels { get; set; }
         public DbSet<CarModelCarClass> CarModelCarClasses { get; set; }
+        public DbSet<CarClass> CarClasses { get; set; }
 
     }
 }

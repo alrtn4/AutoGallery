@@ -54,7 +54,7 @@ namespace SazeNegar.Web.Areas.Admin.Controllers
                 }
                 #endregion
 
-                cars.Brand = _repoBrands.Get(selectedBrand);
+                cars.BrandId = selectedBrand;
                 _repo.Add(cars);
                 return RedirectToAction("Index");
             }
@@ -72,7 +72,7 @@ namespace SazeNegar.Web.Areas.Admin.Controllers
             CarBrandsViewModel carBrandsViewModel = new CarBrandsViewModel();
             carBrandsViewModel.Cars = _repo.Get(id);
             carBrandsViewModel.CarBrandsList = _repo.GetBrandsList();
-            ViewBag.carId = id;
+            ViewBag.brandId = _repo.Get(id).BrandId;
             if (carBrandsViewModel == null)
             {
                 return HttpNotFound();
