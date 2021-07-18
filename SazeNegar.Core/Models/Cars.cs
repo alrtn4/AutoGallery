@@ -26,9 +26,6 @@ namespace SazeNegar.Core.Models
         [Display(Name = "تصویر")]
         public string Image { get; set; }
 
-        public int CarId { get; set; }
-        public int BrandId { get; set; }
-        [ForeignKey("BrandId")]
         public virtual Brands Brand { get; set; }
 
         public string InsertUser { get; set; }

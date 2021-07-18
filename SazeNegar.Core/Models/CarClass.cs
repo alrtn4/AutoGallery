@@ -10,10 +10,14 @@ namespace SazeNegar.Core.Models
 
     public class CarClass : IBaseEntity
     {
+        public CarClass()
+        {
+            this.CarModels = new HashSet<CarModel>();
+        }
         public int Id { get; set; }
         public string Title { get; set; }
 
-        public virtual ICollection<CarModelCarClass> CarModelCarClasses { get; set; }
+        public virtual ICollection<CarModel> CarModels { get; set; }
 
         public string InsertUser { get; set; }
         public DateTime? InsertDate { get; set; }

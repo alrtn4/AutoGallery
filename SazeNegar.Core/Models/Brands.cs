@@ -16,11 +16,7 @@ namespace SazeNegar.Core.Models
         [MaxLength(100, ErrorMessage = "{0} باید از 100 کارکتر کمتر باشد")]
         public string Brand { get; set; }
 
-        public int CarId { get; set; }
-        [ForeignKey("CarId")]
         public virtual ICollection<Cars> Cars { get; set; }
-        public int CarModelId { get; set; }
-        [ForeignKey("CarModelId")]
         public virtual CarModel CarModel { get; set; }
 
         public string InsertUser { get; set; }

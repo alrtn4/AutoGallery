@@ -191,8 +191,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
-    <Compile Include="Areas\Admin\Controllers\CarModelController.cs" />
     <Compile Include="Areas\Admin\Controllers\BrandsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CarModelController.cs" />
     <Compile Include="Areas\Admin\Controllers\CarsController.cs" />
     <Compile Include="Areas\Admin\Controllers\SliderCartController.cs" />
     <Compile Include="Areas\Admin\Controllers\ArticleCategoriesController.cs" />

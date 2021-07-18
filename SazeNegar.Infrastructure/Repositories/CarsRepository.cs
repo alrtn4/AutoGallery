@@ -42,7 +42,7 @@ namespace SazeNegar.Infrastructure.Repositories
             var cars = GetCar(CarId);
             var brands = cars.Brand;
             brands.Brand = brand;
-            brands.CarId = CarId;
+            //brands.CarId = CarId;
             cars.Brand = brands;
             Update(cars);
         }
