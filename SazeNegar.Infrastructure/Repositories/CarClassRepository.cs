@@ -18,5 +18,6 @@ namespace SazeNegar.Infrastructure.Repositories
             _logger = logger;
         }
 
+        
     }
 }

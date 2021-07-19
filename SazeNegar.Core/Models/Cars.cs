@@ -25,7 +25,9 @@ namespace SazeNegar.Core.Models
         public string Navigation { get; set; }
         [Display(Name = "تصویر")]
         public string Image { get; set; }
+        public int temp { get; set; }
 
+        public int BrandId { get; set; }
         public virtual Brands Brand { get; set; }
 
         public string InsertUser { get; set; }

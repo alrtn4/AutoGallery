@@ -7,13 +7,13 @@ namespace SpadCompanyPanel.Infrastructure.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class abc : IMigrationMetadata
+    public sealed partial class Initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(abc));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "202107181249263_abc"; }
+            get { return "202107190816574_Initial"; }
         }
         
         string IMigrationMetadata.Source

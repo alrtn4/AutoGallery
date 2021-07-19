@@ -17,6 +17,7 @@ namespace SazeNegar.Core.Models
         public string Brand { get; set; }
 
         public virtual ICollection<Cars> Cars { get; set; }
+        public int CarModelId { get; set; }
         public virtual CarModel CarModel { get; set; }
 
         public string InsertUser { get; set; }

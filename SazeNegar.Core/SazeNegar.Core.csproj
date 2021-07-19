@@ -87,6 +87,7 @@
     <Compile Include="Models\Brands.cs" />
     <Compile Include="Models\CarClass.cs" />
     <Compile Include="Models\CarModel.cs" />
+    <Compile Include="Models\CarModelCarClass.cs" />
     <Compile Include="Models\Cars.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Certificate.cs" />

@@ -18,5 +18,9 @@ namespace SazeNegar.Infrastructure.Repositories
             _logger = logger;
         }
 
+        public List<CarClass> GetCarClassList()
+        {
+            return _context.CarClasses.ToList();
+        }
     }
 }
